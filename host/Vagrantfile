@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+	config.vm.define "healthithost", primary: true do |hithost|
+		hithost.vm.box = "ubuntu/trusty64"
+		hithost.vm.hostname = "healthithost"
+		# hithost.vm.provision "docker"
+		hithost.vm.network :forwarded_port, guest: 80, host: 18080
+		hithost.vm.network :forwarded_port, guest: 3306, host: 13306
+	end
+end
