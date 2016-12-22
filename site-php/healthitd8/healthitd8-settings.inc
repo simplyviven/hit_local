@@ -8,7 +8,8 @@ ini_set('memory_limit', '128M');
 
 $settings['trusted_host_patterns'] = array(
   '^hitd8\.local',
-  '^healthithost' // your local domain name goes here
+  '^healthithost',
+  '^192\.168\.1\.70' // your local domain name goes here
 );
 
 /* Set database configuration */

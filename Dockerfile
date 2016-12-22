@@ -55,7 +55,7 @@ RUN a2enmod rewrite
 # Setup healthit
 RUN ln -s /srv/app/site-php /var/www/site-php
 RUN ln -s /srv/app/hitgov_drupal8 /var/www/html/hitgov_drupal8
-# RUN chown -R www-data /var/www/html/hitgov_drupal8 && chmod -R g+w /var/www/html
+RUN chown -R www-data /var/www/html/hitgov_drupal8 && chmod -R g+w /var/www/html
 RUN sed -i 's/DocumentRoot \/var\/www\/html/DocumentRoot \/var\/www\/html\/hitgov_drupal8\/docroot/' /etc/apache2/sites-available/000-default.conf
 
 # Setup Supervisor.
